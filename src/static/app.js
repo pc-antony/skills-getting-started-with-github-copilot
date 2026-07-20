@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <div class="participants-section">
             <p class="participants-heading">Participants</p>
-            <ul class="participants-list" data-activity-name="${name}"></ul>
+            <ul class="participants-list"></ul>
           </div>
         `;
 
