@@ -96,9 +96,16 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         const participantsList = activityCard.querySelector(".participants-list");
-        details.participants.forEach((participant) => {
-          participantsList.appendChild(createParticipantItem(name, participant));
-        });
+        if (details.participants.length === 0) {
+          const emptyItem = document.createElement("li");
+          emptyItem.className = "participants-empty";
+          emptyItem.textContent = "No participants yet.";
+          participantsList.appendChild(emptyItem);
+        } else {
+          details.participants.forEach((participant) => {
+            participantsList.appendChild(createParticipantItem(name, participant));
+          });
+        }
 
         activitiesList.appendChild(activityCard);
 
