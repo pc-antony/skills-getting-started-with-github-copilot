@@ -4,27 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
 
-  function renderParticipants(participants) {
-    if (!participants.length) {
-      return `
-        <div class="participants-section">
-          <p class="participants-heading">Participants</p>
-          <p class="participants-empty">No participants yet.</p>
-        </div>
-      `;
-    }
-
-    const participantItems = participants
-      .map((participant) => `<li>${participant}</li>`)
-      .join("");
-
-    return `
-      <div class="participants-section">
-        <p class="participants-heading">Participants</p>
-        <ul class="participants-list">${participantItems}</ul>
-      </div>
-    `;
-  }
 
   async function unregisterParticipant(activity, email) {
     const response = await fetch(
